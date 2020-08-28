@@ -1,0 +1,48 @@
+.container {
+  margin-top: 10px;
+}
+
+.list-box {
+  background-color: #ebecf0;
+  border-radius: 3px;
+  padding: 12px 10px;
+}
+
+.list-card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  margin-bottom: 8px;
+  padding: 10px 8px;
+  cursor: move;
+}
+
+h2.list-header {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.task-header {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.task-icon {
+  width: 8%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.task-icon:hover {
+  cursor: pointer;
+}
+
+.row-header {
+  position: relative;
+}
+
+.task-modal {
+  padding: 5%;
+}
+

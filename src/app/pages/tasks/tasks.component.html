@@ -1,0 +1,153 @@
+<div class="container">
+    <div class="task-col">
+        <div class="row">
+          <div class="col-3">
+            <div class="list-box">
+              <div class="row-header">
+                <h2 class="list-header">Backlog</h2>
+                <div class="task-icon" (click)="openModal(addTask)">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M42.667,85.333H0V384c0,23.573,19.093,42.667,42.667,42.667h298.667V384H42.667V85.333z"/>
+                          <path d="M384,0H128c-23.573,0-42.667,19.093-42.667,42.667v256c0,23.573,19.093,42.667,42.667,42.667h256     c23.573,0,42.667-19.093,42.667-42.667v-256C426.667,19.093,407.573,0,384,0z M362.667,192h-85.333v85.333h-42.667V192h-85.333     v-42.667h85.333V64h42.667v85.333h85.333V192z"/>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <a>
+                <div class="list"
+                  cdkDropList
+                  #todoList="cdkDropList"
+                  [cdkDropListData]="todos"
+                  [cdkDropListConnectedTo]="[doneList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <mat-card class="list-card" *ngFor="let todo of todos" cdkDrag>
+                    <h3 class="task-header">
+                      {{todo.name}}
+                    </h3>
+                    <div class="task-description">
+                      {{todo.category}}
+                    </div>
+                  </mat-card>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="list-box">
+              <div class="row-header">
+                <h2 class="list-header">To Do</h2>
+                <div class="task-icon" (click)="openModal(addTask)">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M42.667,85.333H0V384c0,23.573,19.093,42.667,42.667,42.667h298.667V384H42.667V85.333z"/>
+                          <path d="M384,0H128c-23.573,0-42.667,19.093-42.667,42.667v256c0,23.573,19.093,42.667,42.667,42.667h256     c23.573,0,42.667-19.093,42.667-42.667v-256C426.667,19.093,407.573,0,384,0z M362.667,192h-85.333v85.333h-42.667V192h-85.333     v-42.667h85.333V64h42.667v85.333h85.333V192z"/>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <a>
+                <div class="list"
+                  cdkDropList
+                  #doneList="cdkDropList"
+                  [cdkDropListData]="completed"
+                  [cdkDropListConnectedTo]="todoList"
+                  (cdkDropListDropped)="drop($event)">
+                  <mat-card class="list-card" *ngFor="let complete of completed" cdkDrag>
+                    <h3 class="task-header">
+                      {{complete.name}}
+                    </h3>
+                    <div class="task-description">
+                      {{complete.category}}
+                    </div>
+                  </mat-card>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="list-box">
+              <div class="row-header">
+                <h2 class="list-header">In Progress</h2>
+                <div class="task-icon" (click)="openModal(addTask)">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M42.667,85.333H0V384c0,23.573,19.093,42.667,42.667,42.667h298.667V384H42.667V85.333z"/>
+                          <path d="M384,0H128c-23.573,0-42.667,19.093-42.667,42.667v256c0,23.573,19.093,42.667,42.667,42.667h256     c23.573,0,42.667-19.093,42.667-42.667v-256C426.667,19.093,407.573,0,384,0z M362.667,192h-85.333v85.333h-42.667V192h-85.333     v-42.667h85.333V64h42.667v85.333h85.333V192z"/>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <a>
+                <div class="list-card">
+                  <h3 class="task-header">
+                    Developer
+                  </h3>
+                  <div class="task-description">
+                    Developer Description
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="list-box">
+              <div class="row-header">
+                <h2 class="list-header">Done</h2>
+                <div class="task-icon" (click)="openModal(addTask)">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M42.667,85.333H0V384c0,23.573,19.093,42.667,42.667,42.667h298.667V384H42.667V85.333z"/>
+                          <path d="M384,0H128c-23.573,0-42.667,19.093-42.667,42.667v256c0,23.573,19.093,42.667,42.667,42.667h256     c23.573,0,42.667-19.093,42.667-42.667v-256C426.667,19.093,407.573,0,384,0z M362.667,192h-85.333v85.333h-42.667V192h-85.333     v-42.667h85.333V64h42.667v85.333h85.333V192z"/>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <a>
+                <div class="list-card">
+                  <h3 class="task-header">
+                    Developer
+                  </h3>
+                  <div class="task-description">
+                    Developer Description
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!--POPUP MODAL START-->
+        <ng-template #addTask>
+          <div class="task-modal">
+            <h5>Add Tasks</h5>
+            <form #value="ngForm" (ngSubmit)="formSubmit(value)">
+              <label>Add Title</label>
+              <input class="form-control" type="text" [(ngModel)]="title" name="title">
+              <br>
+              <label>Add Description</label>
+              <input class="form-control" type="text" [(ngModel)]="description" name="description">
+              <br>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+        </ng-template>
+        <!--POPUP MODAL END-->
+    </div>
+</div>
