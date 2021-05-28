@@ -4,4 +4,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Simple Minimalistic Kanban Board
 
-![image](https://user-images.githubusercontent.com/36261653/120033662-81d70580-c019-11eb-97d4-7a2a8f78abba.png)
+![image](https://user-images.githubusercontent.com/36261653/120033747-a501b500-c019-11eb-9615-0a6679bd50b5.png)
+
